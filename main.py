@@ -55,12 +55,16 @@ async def on_message(msg):
                 await msg.channel.send("<@721797796881104936> https://tenor.com/view/mr-krabs-back-to-work-spongebob-get-back-to-work-krusty-krab-gif-16474125980856176144")
 
     except Exception as err:
-        print(f"womp womp.... {err}")
+        await msg.channel.send(f"womp womp.... {err}")
 
 @tasks.loop(hours = 2)
 async def loop_message():
-    channel = bot_client.get_channel(934692159792242708)
-    await channel.send(random.randchoice(random_messages))
-        
+    try:
+        channel = bot_client.get_channel(934692159792242708)
+        await channel.send(random.choice(random_messages))
+
+    except Exception as err:
+        await channel.send("Something went wrong! Please contact <@524338310555107368> immediately.")
+
 bot_client.run(os.getenv('DISCORD_BOT_TOKEN'))
 
