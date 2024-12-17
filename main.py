@@ -7,12 +7,16 @@ import time
 from discord.ext import tasks, commands
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 intents = discord.Intents.all()
 intents.message_content = True
-bot_client = commands.Bot(command_prefix="l!", owner_id = 680955785215606800, case_insensitive=True, intents=intents, help_command=None)
+bot_client = commands.Bot(
+    command_prefix="l!", 
+    owner_id = 680955785215606800, 
+    case_insensitive=True, intents=intents, 
+    help_command=None
+)
 
 start_time = time.time()
 msg_sent_at = {}
