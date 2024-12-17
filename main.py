@@ -7,6 +7,7 @@ import time
 from discord.ext import tasks, commands
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
 intents = discord.Intents.all()

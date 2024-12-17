@@ -1,6 +1,5 @@
 random_messages = [
     "God bless you with mountains of gold and silver",
-    "Good Morning. Let's basketball.",
     "Beautiful Risings Pharaoh. My temple is calling for its Pharaoh.",
     "Oooooh Lucy I'm Lebron James hairline",
     "tweaking out at staples rn need me a baddie ASAP!!",
@@ -8,6 +7,7 @@ random_messages = [
     "knocked out rn",
     "<@524338310555107368> <@264582469037195264> wanna play phas later",
     "<@524338310555107368> <@264582469037195264> wanna play val later",
+    "<@1100961196913471548> wanna play val with john later",
     "<@264582469037195264> vc",
     "<@524338310555107368> vc",
     "https://cdn.discordapp.com/attachments/1157898808915677215/1299644913629003837/arabstone.mp4?ex=676130a5&is=675fdf25&hm=3dddf37848b7ee365eeed5d10b4efb31975ed1254c2fb23d7065debf8e4e96d0&",
