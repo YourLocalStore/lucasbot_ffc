@@ -2,19 +2,37 @@ import discord
 import main
 import time, math
 import requests
+import os, sys
 
 from discord.ext import tasks, commands
+
+ownid = os.environ.get('ID_STORE')
 
 @commands.command(name="shutoff")
 @commands.is_owner()
 async def bot_shutdown(ctx):
-    bot_shutdown = "Shutting down..."
-    await ctx.send(f"{bot_shutdown}")
+    shutdown_msg = "Shutting down..."
+    await ctx.send(f"{shutdown_msg}")
     await ctx.bot.close()
+
+@commands.command(name="restart")
+@commands.is_owner()
+async def bot_restart(ctx):
+    try:
+        if ctx.author.id == int(ownid):
+            restart_msg = "Restarting bot..."
+            await ctx.send(f"{restart_msg}")
+            await restart_func()
+        else:
+            print("A problem occurred! Insufficent credentials maybe?")
+    except Exception as err:
+        print(err)
+
+def restart_func():
+    os.execv(sys.executable, ["python", sys.argv[0]])
 
 @commands.command(name="runtime")
 async def bot_runtime(ctx):
-
     if ctx.author:
         end_time = time.time()
         total_time = (end_time - main.start_time)
@@ -38,9 +56,9 @@ async def get_random_cat(ctx):
 
         if cat_status.status_code == 200:
             print("Successful connection!")
+
             cat_image = cat_status.json()[0]["url"] # Stored as first index, get matching k,v pair
             cat_embed.set_image(url = cat_image)
-
             await ctx.send(embed = cat_embed)
 
         else:
@@ -62,9 +80,9 @@ async def get_random_dog(ctx):
 
         if dog_status.status_code == 200:
             print("Successful connection!")
+
             dog_image = dog_status.json()["message"]
             dog_embed.set_image(url = dog_image)
-
             await ctx.send(embed = dog_embed)
 
         else:
@@ -73,12 +91,9 @@ async def get_random_dog(ctx):
     except Exception as err:
         print(err)
 
-"""
-GROUPING FOR HELP COMMAND
-"""
+
 @commands.group(name="help", invoke_without_command=True)
 async def bot_help(ctx):
-
     help_embed = discord.Embed(
         description = "Type l!help (Command) to see specific information about commands.",
         title = "Lucas Bot Help Centre",
@@ -89,13 +104,12 @@ async def bot_help(ctx):
     )
     help_embed.add_field(
         name = "Fun", 
-        value = "randomcat, randomdog, randomcow"
+        value = "randomcat, randomdog"
     )
     help_embed.add_field(
         name = "Owner", 
-        value = "shutdown"
+        value = "shutdown, restart"
     )
-
     await ctx.send(embed = help_embed)
 
 @bot_help.command()
@@ -144,3 +158,4 @@ async def setup(bot):
     bot.add_command(bot_help)
     bot.add_command(get_random_cat)
     bot.add_command(get_random_dog)
+    bot.add_command(bot_restart)

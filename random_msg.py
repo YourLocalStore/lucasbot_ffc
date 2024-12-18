@@ -1,15 +1,22 @@
 random_messages = [
     "God bless you with mountains of gold and silver",
-    "Beautiful Risings Pharaoh. My temple is calling for its Pharaoh.",
     "Oooooh Lucy I'm Lebron James hairline",
     "tweaking out at staples rn need me a baddie ASAP!!",
     "Y'all see the shoes. Y'all see the money.",
     "knocked out rn",
-    "<@524338310555107368> <@264582469037195264> wanna play phas later",
-    "<@524338310555107368> <@264582469037195264> wanna play val later",
-    "<@1100961196913471548> wanna play val with john later",
-    "<@264582469037195264> vc",
-    "<@524338310555107368> vc",
+    "I'll be right back, got 32 parties to attend.",
+    "Gonna make some juice one sec.",
+    "Doing side quests...",
+    "Fun fact — Did you know my great great great great great great great great great great great grandfather was the emperor of China?",
+    "Mandarin is pretty peak ngl",
+    "wanna play phas",
+    "wanna play val",
+    "Hey gangalang",
+    "Can't rn, at a buffet",
+    "Going to my grandparent's house",
+]
+
+random_videos = [
     "https://cdn.discordapp.com/attachments/1157898808915677215/1299644913629003837/arabstone.mp4?ex=676130a5&is=675fdf25&hm=3dddf37848b7ee365eeed5d10b4efb31975ed1254c2fb23d7065debf8e4e96d0&",
     "https://cdn.discordapp.com/attachments/1157898808915677215/1271325075651563634/jamaicanspongebob.mp4?ex=6760febe&is=675fad3e&hm=0d752735283a12914653c188ffb7b170a15a39e6ed49a956ff0881244be2af65&",
     "https://cdn.discordapp.com/attachments/1157898808915677215/1270939547936489493/GUWehfCWoAA0WJN.png?ex=6760e931&is=675f97b1&hm=aed99e544a5620b0474304baecec50532885d085379d79ad5cce32dde82a5d85&",
